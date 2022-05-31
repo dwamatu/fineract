@@ -18,7 +18,10 @@ jobs:
           distribution: 'zulu'
           cache: gradle
       - name: Build the image
-        run: ./gradlew :fineract-provider:clean :fineract-provider:jibDockerBuild -x test 
+        run: ./gradlew :fineract-provider:clean :fineract-provider:jibDockerBuild -x test
+      - name: Get the Version
+        id: vars
+        run: echo ::set-output name=tag::$(echo ${GITHUB_SHA:10})
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
