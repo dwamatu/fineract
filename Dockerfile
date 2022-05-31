@@ -1,11 +1,12 @@
 FROM gradle:7.4.2-jdk17-alpine as build
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
+
 RUN gradle clean bootJar
 
 RUN ls
 
-RUN cd fineract-provider
+WORKDIR fineract-provider
 
 RUN ls
 
