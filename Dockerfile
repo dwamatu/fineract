@@ -6,10 +6,6 @@ RUN gradle clean bootJar
 
 RUN ls
 
-WORKDIR fineract-provider/build/libs
-
-RUN ls
-
 
 FROM openjdk:17-alpine
 
@@ -17,6 +13,6 @@ EXPOSE 8080
 
 RUN mkdir /app
 
-COPY --from=build /home/gradle/src/build/libs/*.jar /app/spring-boot-application.jar
+COPY --from=build fineract-provider/build/libs/fineract-provider-*.jar /app/spring-boot-application.jar
 
 ENTRYPOINT ["java",  "-Djava.security.egd=file:/dev/./urandom","-jar","/app/spring-boot-application.jar"]
