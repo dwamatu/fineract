@@ -9,8 +9,26 @@ EXPOSE 8080
 
 RUN mkdir /app
 
+RUN cd /home
+
 RUN ls
 
-COPY --from=build fineract-provider/build/libs/*.jar /app/spring-boot-application.jar
+RUN cd gradle
+
+RUN ls
+
+RUN cd src
+
+RUN ls
+
+RUN cd build
+
+RUN ls
+
+RUN cd libs
+
+RUN ls
+
+COPY --from=build /home/gradle/src/build/libs/*.jar /app/spring-boot-application.jar
 
 ENTRYPOINT ["java",  "-Djava.security.egd=file:/dev/./urandom","-jar","/app/spring-boot-application.jar"]
