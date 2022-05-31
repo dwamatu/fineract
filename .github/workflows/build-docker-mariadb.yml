@@ -26,4 +26,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - uses: actions/checkout@v2
       - name: Docker Push
-        run: docker push  fineract/fineract-server:v1.0.0-${GITHUB_SHA::6
+        run: docker push  fineract/fineract-server:v1.0.0-${GITHUB_SHA::6}-amd64
