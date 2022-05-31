@@ -5,13 +5,10 @@ RUN gradle clean bootJar
 
 RUN ls
 
-RUN cd build
+RUN cd fineract-provider
 
 RUN ls
 
-RUN cd  libs
-
-RUN ls
 
 FROM openjdk:17-alpine
 
