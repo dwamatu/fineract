@@ -22,4 +22,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ${{ github.event.repository.name }}-server:v1.0.0-${GITHUB_SHA::6}-amd64
     - name: Docker Push
-      run: docker push ${{ github.event.repository.name }}-server:v1.0.0-${GITHUB_SHA::6}-amd64
+      run: docker push dwamatu/${{ github.event.repository.name }}-server:v1.0.0-${GITHUB_SHA::6}-amd64
