@@ -9,7 +9,7 @@ EXPOSE 8080
 
 RUN mkdir /app
 
-RUN cd /home
+RUN cd home
 
 RUN ls
 
