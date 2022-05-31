@@ -6,7 +6,7 @@ RUN gradle clean bootJar
 
 RUN ls
 
-WORKDIR fineract-provider
+WORKDIR fineract-provider/build
 
 RUN ls
 
