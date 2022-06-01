@@ -20,6 +20,6 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}-server:v1.0.0-${GITHUB_SHA::6}-amd64
+      run: docker build . --file Dockerfile --tag cellulant/${{ github.event.repository.name }}-server:v1.0.0-${GITHUB_SHA::6}-amd64
     - name: Docker Push
-      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}-server:v1.0.0-${GITHUB_SHA::6}-amd64
+      run: docker push cellulant/${{ github.event.repository.name }}-server:v1.0.0-${GITHUB_SHA::6}-amd64
